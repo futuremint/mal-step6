@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body style="margin-top: 5%">
+    <div class="container">
+      <div class="row">
+        <div class="six columns"><h3>Execute</h3></div>
+        <div class="six columns"><h3>Tree</h3></div>
+      </div>
+      <div class="row">
+        <div class="six columns">
+
+          <div class="row">
+            <div class="twelve columns">
+              <button id="test">Run Tests</button>
+              <button id="step">Step Eval</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="twelve columns">
+              <label for="out">output</label>
+              <textarea class="u-full-width" id="out" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="three columns">
+              <label for="in">user &gt;</label>
+            </div>
+            <div class="nine columns">
+              <input class="u-full-width" id="in" type="text" />
+            </div>
+          </div>
+
+        </div>
+        <div class="six columns">
+          <pre><code id="tree"></code></pre>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="module">
+    import main from './ui.js';    
+    main(window);
+  </script>
+</html>

@@ -1,0 +1,32 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "fm-mal-js-step6",
+  "version": "0.0.1",
+  "description": "Make A Lisp Step6 ",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run build && node server.js",
+    "build": "npm run build:repl && npm run build:tests",
+    "build:repl": "rollup -c rollup.config.repl.js",
+    "build:tests": "rollup -c rollup.config.tests.js",
+    "test": "npm run build && node nodejs/run-tests.js"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "rollup": "^0.50.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/fm-mal-js-step6"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
