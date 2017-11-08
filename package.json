@@ -18,6 +18,7 @@
     "prestart": "npm run build:ui:repl && npm run build:ui:tests",
     "pretest": "npm run build:nodejs:repl && npm run build:nodejs:tests",
     "test": "node $npm_package_directories_cli/run-tests.js",
+    "build": "npm run prestart && npm run pretest",
     "build:ui:repl": "rollup -f es -i $npm_package_config_replFile -o $npm_package_directories_ui/repl.js",
     "build:ui:tests": "rollup -f es -i $npm_package_config_testFile -o $npm_package_directories_ui/tests.js",
     "build:nodejs:repl": "rollup -f cjs -i $npm_package_config_replFile -o $npm_package_directories_cli/repl.js",
