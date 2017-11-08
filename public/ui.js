@@ -1,6 +1,6 @@
-import { READ, EVAL, PRINT, env, repl } from './lisp/repl.js';
+import { READ, EVAL, PRINT, env, repl } from './repl.js';
 import { runTests } from './tests.js';
-import tree from './tools/tree.js';
+import tree from './tools/tree.js'; // Maybe compile this? Its UI
 
 // Interface to the HTML page
 let userInput;
