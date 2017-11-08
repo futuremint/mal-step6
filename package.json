@@ -6,12 +6,22 @@
   "version": "0.0.1",
   "description": "Make A Lisp Step6 ",
   "main": "server.js",
+  "directories": {
+    "ui": "./public",
+    "cli": "./nodejs"
+  },
+  "config": {
+    "testFile": "./tests.js",
+    "replFile": "./lisp/repl.js"
+  },
   "scripts": {
-    "start": "npm run build && node server.js",
-    "build": "npm run build:repl && npm run build:tests",
-    "build:repl": "rollup -c rollup.config.repl.js",
-    "build:tests": "rollup -c rollup.config.tests.js",
-    "test": "npm run build && node nodejs/run-tests.js"
+    "prestart": "npm run build:ui:repl && npm run build:ui:tests",
+    "pretest": "npm run build:nodejs:repl && npm run build:nodejs:tests",
+    "test": "node $npm_package_directories_cli/run-tests.js",
+    "build:ui:repl": "rollup -f es -i $npm_package_config_replFile -o $npm_package_directories_ui/repl.js",
+    "build:ui:tests": "rollup -f es -i $npm_package_config_testFile -o $npm_package_directories_ui/tests.js",
+    "build:nodejs:repl": "rollup -f cjs -i $npm_package_config_replFile -o $npm_package_directories_cli/repl.js",
+    "build:nodejs:tests": "rollup -f cjs -i $npm_package_config_testFile -o $npm_package_directories_cli/tests.js"
   },
   "dependencies": {
     "express": "^4.15.4",
